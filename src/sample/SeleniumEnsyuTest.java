@@ -1,7 +1,5 @@
 package sample;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -39,27 +37,31 @@ class SeleniumEnsyuTest {
 		Thread.sleep(5000);
 
 		WebElement searchBox = driver.findElement(By.name("q"));
-		searchBox.sendKeys("ラクスパートナーズ");
+		searchBox.sendKeys("Selenium");
 		searchBox.submit();
-
+		
+		
 		Thread.sleep(5000);
+		WebElement element = driver.findElement(By.linkText("selenium"));
+		 element.click();
+		
 //		driver.quit();
 	}
 
 	
-	@Test
-	void test2() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "./exe/chromedriver.exe");
-		WebDriver driver = new ChromeDriver(); // ChromeDriverの作成
-
-		driver.get("https://www.yahoo.co.jp/"); // get()でブラウザ起動
-		Thread.sleep(5000);
-
-		WebElement searchBox = driver.findElement(By.name("p"));//driver.findElement(By.name("　"))　操作したい要素を取り出す
-		searchBox.sendKeys("ラクスパートナーズ");
-		searchBox.submit();
-
-		Thread.sleep(5000);
-//		driver.quit();
-	}
+//	@Test
+//	void test2() throws InterruptedException {
+//		System.setProperty("webdriver.chrome.driver", "./exe/chromedriver.exe");
+//		WebDriver driver = new ChromeDriver(); // ChromeDriverの作成
+//
+//		driver.get("https://www.yahoo.co.jp/"); // get()でブラウザ起動
+//		Thread.sleep(5000);
+//
+//		WebElement searchBox = driver.findElement(By.name("p"));//driver.findElement(By.name("　"))　操作したい要素を取り出す
+//		searchBox.sendKeys("ラクスパートナーズ");
+//		searchBox.submit();
+//
+//		Thread.sleep(5000);
+////		driver.quit();
+//	}
 }
